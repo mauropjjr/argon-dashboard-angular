@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private loginService: LoginService,
     private sessao: SessaoService,
     private router: Router,
-    private toastr: ToastrService,
+    public toastr: ToastrService,
     private fb: FormBuilder
   ) {}
 

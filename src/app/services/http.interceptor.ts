@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class MyHttpInterceptor implements HttpInterceptor {
 
-  constructor(private toastr: ToastrService, private sessao: SessaoService, private router: Router) { }
+  constructor(public toastr: ToastrService, private sessao: SessaoService, private router: Router) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 

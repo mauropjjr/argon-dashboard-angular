@@ -1,3 +1,4 @@
+import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -27,7 +28,8 @@ import { ControlMessagesModule } from './shared/control-messages/control-message
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule.forRoot()
   ],
   declarations: [
     AppComponent,
