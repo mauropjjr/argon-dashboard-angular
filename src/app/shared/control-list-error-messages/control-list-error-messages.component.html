@@ -1,0 +1,7 @@
+<div class="row" *ngIf="listErros && listErros.length">
+    <div class="error-message">
+      <ul>
+        <li *ngFor="let e of listErros;">{{e.msg}}</li>
+      </ul>
+    </div>
+  </div>
