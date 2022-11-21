@@ -1,3 +1,4 @@
+import { ControlMessagesModule } from './../../shared/control-messages/control-messages.module';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,13 +14,16 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { ToastrModule } from 'ngx-toastr';
-
+import { NgxMaskModule } from 'ngx-mask';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
+    ReactiveFormsModule,
     FormsModule,
+    ControlMessagesModule,
     HttpClientModule,
+    NgxMaskModule.forRoot(),
     NgbModule,
     ClipboardModule
   ],

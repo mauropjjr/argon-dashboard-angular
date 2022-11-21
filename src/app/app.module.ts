@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app.routing';
 import { MyHttpInterceptor } from './services/http.interceptor';
 import { ComponentsModule } from './components/components.module';
 import { ControlMessagesModule } from './shared/control-messages/control-messages.module';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ControlMessagesModule } from './shared/control-messages/control-message
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    LoadingBarHttpClientModule
   ],
   declarations: [
     AppComponent,

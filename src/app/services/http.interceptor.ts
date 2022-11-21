@@ -23,7 +23,7 @@ export class MyHttpInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const url = req.url.includes('http') ? req.url : environment.baseUrl + req.url;
-    const api_key = this.sessao.get('Login') ? this.sessao.get('Login').api_key : '';
+    const api_key = this.sessao.get('Login') ? this.sessao.get('Login').token : '';
     const cloneReq = req.clone({
       url: url,
       headers: req.headers.set('Authorization', `Basic ${api_key}`)

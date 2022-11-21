@@ -11,15 +11,29 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getId(id) {
-    return this.http.get<Usuario>(environment.baseUrl + `usuarios/${id}.json`);
+    return this.http.get<any>(environment.baseUrl + `usuarios/${id}.json`);
   }
 
   get(params) {
-    return this.http.get<Usuarios>(environment.baseUrl + 'usuarios.json', { params: params });
+    return this.http.get<any>(environment.baseUrl + 'usuarios.json', { params: params });
   }
 
   salvar(params) {
-    return this.http.post(environment.baseUrl + 'usuarios.json', params);
+    if (params['id']) {
+      return this.http.put(environment.baseUrl + 'usuarios/' + params['id'] + '/.json', params);
+    } else {
+      return this.http.post(environment.baseUrl + 'usuarios.json', params);
+    }
+  }
+  salvarContador(params) {
+    if (params['id']) {
+      return this.http.put(environment.baseUrl + 'usuarios/' + params['id'] + '/.json', params);
+    } else {
+      return this.http.post(environment.baseUrl + 'representanteContadores.json', params);
+    }
+  }
+  listarContador(params) {
+    return this.http.get(environment.baseUrl + 'representanteContadores.json', { params: params });
   }
 
 }

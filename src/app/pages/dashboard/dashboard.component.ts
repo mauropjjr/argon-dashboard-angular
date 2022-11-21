@@ -1,3 +1,4 @@
+import { DashService } from './../../services/dash';
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
@@ -21,6 +22,17 @@ export class DashboardComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+  public dash: any;
+
+  constructor(
+    private dashService: DashService
+
+  ) {
+    this.dashService.getAll().subscribe(data => {
+      this.dash = data;
+      this.chartValorRecebido();
+    });
+  }
 
   ngOnInit() {
 
@@ -42,13 +54,48 @@ export class DashboardComponent implements OnInit {
       data: chartExample2.data
     });
 
-    var chartSales = document.getElementById('chart-sales');
+
+  }
+
+  public chartValorRecebido() {
+    {
+      const chartSales = document.getElementById('chart-sales');
+
+
+      let opcoes = {
+        options: {
+          scales: {
+            yAxes: [{
+              gridLines: {
+                color: '#212529',
+                zeroLineColor: '#212529',
+                drawOnChartArea: false
+              },
+              ticks: {
+                callback: function (value) {
+                  if (!(value % 10)) {
+                    return 'R$' + value + '';
+                  }
+                }
+              }
+            }]
+          }
+        },
+        data: {
+          labels: this.dash.dashboard.grafico_recebimento.map(m => m.ano + "/" + m.mes),
+          datasets: [{
+            label: 'Performance',
+            data: this.dash.dashboard.grafico_recebimento.map(m => m.total)
+          }]
+        }
+      };
 
     this.salesChart = new Chart(chartSales, {
-			type: 'line',
-			options: chartExample1.options,
-			data: chartExample1.data
-		});
+      type: 'line',
+      options: opcoes.options,
+      data: opcoes.data
+    });
+  }
   }
 
 
