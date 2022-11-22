@@ -1,3 +1,6 @@
+import { AssinaturasComponent } from './../../pages/assinaturas/assinaturas.component';
+import { ConsultoresComponent } from './../../pages/consultores/consultores.component';
+import { ClientesComponent } from './../../pages/clientes/clientes.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../pages/dashboard/dashboard.component';
@@ -11,5 +14,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'tables',         component: TablesComponent },
     { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent }
+    { path: 'maps',           component: MapsComponent },
+    { path: 'consultores',       component: ConsultoresComponent},
+    { path: 'assinaturas',       component: AssinaturasComponent},
+    { path: 'clientes',       component: ClientesComponent}
 ];

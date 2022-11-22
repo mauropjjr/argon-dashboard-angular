@@ -9,7 +9,7 @@
     <div class="col-xl-6 ">
       <div class="card card-profile shadow">
         <div class="card-header bg-white border-0">
-          <h3 class="mb-0">Lista de Contadores</h3>
+          <h3 class="mb-0">Lista de Consultores</h3>
         </div>
         <div class="card-body pt-0 pt-md-4">
           <div class="table-responsive">
@@ -17,20 +17,20 @@
               <thead class="thead-light">
                 <tr>
                   <th scope="col">Nome</th>
-                  <th scope="col">Consultor</th>
                   <th scope="col">Celular</th>
+                  <th scope="col">Email</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of contadores ">
-                  <th scope="row" (click)="selecionar(item.controle_usuario_contadore.id)">
-                    {{item.controle_usuario_contadore.nome}}
+                <tr *ngFor="let item of consultores ">
+                  <th scope="row" (click)="selecionar(item.id)">
+                    {{item.nome}}
                   </th>
-                  <th scope="row">
-                    {{item.controle_usuario.nome}}
-                  </th>
+                   <td>
+                    {{item.celular}}
+                  </td>
                   <td>
-                    {{item.controle_usuario_contadore.celular}}
+                    {{item.email}}
                   </td>
                 </tr>
 

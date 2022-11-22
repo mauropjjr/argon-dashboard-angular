@@ -37,6 +37,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent
+
   ],
   providers: [
   // {

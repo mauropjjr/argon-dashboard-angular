@@ -11,7 +11,10 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
     //{ path: '/icons', title: 'Icons',  icon:'ni-planet text-blue', class: '' },
     //{ path: '/maps', title: 'Maps',  icon:'ni-pin-3 text-orange', class: '' },
+    { path: '/consultores', title: 'Consultores',  icon:'ni-single-02 text-yellow', class: '' },
     { path: '/user-profile', title: 'Contadores',  icon:'ni-single-02 text-yellow', class: '' },
+    { path: '/clientes', title: 'Clientes',  icon:'ni-single-02 text-yellow', class: '' },
+    { path: '/assinaturas', title: 'Assinaturas',  icon:'ni-single-02 text-yellow', class: '' },
    // { path: '/tables', title: 'Tables',  icon:'ni-bullet-list-67 text-red', class: '' },
     { path: '/login', title: 'Logout',  icon:'ni-user-run text-info', class: '' }
    // { path: '/register', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' }

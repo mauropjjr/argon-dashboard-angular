@@ -1,3 +1,4 @@
+import { ClientesComponent } from './../../pages/clientes/clientes.component';
 import { ControlMessagesModule } from './../../shared/control-messages/control-messages.module';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';import { RouterModule } from '@angular/router';
@@ -15,6 +16,8 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { ToastrModule } from 'ngx-toastr';
 import { NgxMaskModule } from 'ngx-mask';
+import { AssinaturasComponent } from '../../pages/assinaturas/assinaturas.component';
+import { ConsultoresComponent } from '../../pages/consultores/consultores.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -32,7 +35,10 @@ import { NgxMaskModule } from 'ngx-mask';
     UserProfileComponent,
     TablesComponent,
     IconsComponent,
-    MapsComponent
+    MapsComponent,
+    ClientesComponent,
+    ConsultoresComponent,
+    AssinaturasComponent
   ]
 })
 
